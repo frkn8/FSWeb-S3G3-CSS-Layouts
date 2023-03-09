@@ -1,91 +1,147 @@
-</section>
-<footer class="footer ">
-    <div class="footer__cta containerClamp ">
-        <p>Gördükleerinden memnun musun?</p>
-        <button>Bana Ulaş</button>
-    </div>
-</footer>
-</div>
-</body>
-</html>
-
 body {
-    margin: 0;
-  }
-  
-  .containerClamp {
-    width: 900px;
-    margin: 0 auto;
-  }
-  
-  .header {
-    display: flex;
-    flex-direction: column;
-    background-color: antiquewhite;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Tilt Prism", cursive;
+}
+
+button {
+  padding: 10px 30px;
+}
+
+.containerClamp {
+  /* width: 900px; media query içine taşındı */
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+.menu ul {
+  padding-inline-start: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: darkslategrey;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.menu ul li.menu--active {background-color: slateblue;
+}
+
+.menu ul li:hover {
+  background-color: darkblue;
+}
+.menu ul li a {
+  color: wheat;
+}
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px auto;
+}
+.about__image img {
+  border-radius: 10px;
+}
+.about__content {
+  /* display: inline-block; */
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding-right: 20px;
+  min-width: 200px;
+  max-width: 400px;
+}
+.projects {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.projects__item {
+  /* display: inline-block; */
+  margin-bottom: 20px;
+}
+.project__image {
+  background-color: tomato;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.footer__cta {
+  display: inline-block;
+  text-align: center;
+}
+@media only screen and (max-width: 500px) {
   .header h1 {
-    margin-left: 40px;
-  }
-  
-  .menu ul li {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: darkslategrey;
-    text-transform: uppercase;
-  }
-  
-  .menu ul li.menu--active {
-    background-color: tomato;
-  }
-  
-  .menu ul li:hover {
-    background-color: darkblue;
-  }
-  
-  .menu ul li a {
-    color: wheat;
-  }
-  
-  .about {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin: 20px auto;
-  }
-  .about__content {
-    /* display: inline-block; */
-    margin-top: auto;
-    margin-bottom: 20px;
-    padding-right: 20px;
-    min-width: 200px;
-    max-width: 400px;
-  }
-  .projects {
-    margin: 20px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .projects__item {
-    /* display: inline-block; */
-    margin-bottom: 20px;
-  }
-  
-  .project__image{
-    background-color: tomato;
-    width: 200px;
-  }
-  
-  .footer {
-    background-color: cadetblue;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-  }
-  
-  .footer__cta {
-    display: inline-block;
+    margin-left: 0;
     text-align: center;
   }
+  .menu {
+    text-align: center;
+  }
+  .menu ul li {
+    display: block;
+  }
+  .about {
+    justify-content: center;
+  }
+  .about__content {
+    padding: 0;
+    text-align: center;
+  }
+  .about__content p {
+    text-align: left;
+  }
+  .projects__item {
+    /* display: inline-block; */
+    width: 40%;
+  }
+  .project__image {
+    background-color: tomato;
+    width: 100%;
+  }
+  .projects {
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 900px) {
+  .projects {
+    gap: 30px;
+    justify-content: space-evenly;
+  }
+  .about {
+    flex-wrap: nowrap;
+  }
+  .about__image {
+  }
+  .about__content {
+    min-width: initial;
+    max-width: initial;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .containerClamp {
+    width: 900px;
+  }
+}
